@@ -22,7 +22,7 @@
       <div class="wrapper" style="margin-top: 5rem">
         <h1 class="block">Zoomheads</h1>
         <div>
-          An InnoFest project by Joy, Van Sis, Eve, Isabelle, Ethan & Yueh-Han
+          An InnoFest project by Joy, Vinay, Eve, Isabelle, Ethan & Yueh-Han
         </div>
       </div>
       <div style="margin-top: 2rem">
@@ -31,15 +31,15 @@
           <label for="theFile">
             <h3 class="block">Select Image 🏞</h3>
           </label>
-          <form method="post" enctype="multipart/form-data">
-            <label for="submitBtn">
+          <label for="submitBtn">
               <h3 class="block">Submit 📸</h3>
             </label>
-          </form>
-        </div>
-        <hr />
-      </div>
+        
+    </div>
+    <hr />
+</div>
 
+<form method="post" enctype="multipart/form-data">
       <div id="submitBox">
         <input
           style="visibility: hidden"
@@ -56,6 +56,7 @@
           type="submit"
         />
       </div>
+    </form>
       <div class="images">
         {% for filename in filenames %}
         <figure style="float: left; margin-right: 20px; margin-bottom: 20px">
