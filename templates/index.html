@@ -6,12 +6,15 @@
     </head>
     <body>
         <div class="container">
-            <h1>Sticker Search</h1>
-            <form method="POST" enctype="multipart/form-data">
-                <input type="text" name="query_text" value={{ query_text|default('') }}><br>
-                <input type="submit">
-            </form>
-            <h2>Final image here:</h2>
-        </div>  
+            <form method="post" enctype="multipart/form-data">
+                <input type="file" name="content" accept="image/*"><input type="submit">
+                <hr>
+                {% for filename in filenames %}
+                <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                    <img src="{{ filename }}" style="max-height:850px;max-width:850px">
+                </figure>
+                {% endfor %}
+              </form>
+        </div>
     </body>
 </html>
