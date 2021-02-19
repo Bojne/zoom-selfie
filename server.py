@@ -4,8 +4,11 @@ from io import BytesIO
 from PIL import Image
 from flask import Flask, render_template, request
 from zoomie_stuff import main, template_files
+import string
+import random
 
 print('Found {} template files'.format(len(template_files)))
+rand_string = lambda: ''.join(random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits + '_', k=20))
 
 app = Flask(__name__)
 
@@ -28,7 +31,7 @@ def index():
         for index, fn in enumerate(template_files):
             print('processing', index)
             result = main(image, Image.open(fn)).convert('RGB')
-            filename = os.path.join(DIRNAME, '{}.jpg'.format(index))
+            filename = os.path.join(DIRNAME, '{}_{}.jpg'.format(rand_string(), index))
             if os.path.exists(filename): os.remove(filename)
             result.save(filename)
             filenames.append(filename)

@@ -6,6 +6,8 @@ import glob
 
 CWD = os.path.dirname(__file__)
 template_files = glob.glob(os.path.join(CWD, 'template_images', '*.png'))
+template_files += glob.glob(os.path.join(CWD, 'template_images', '*.jpg'))
+template_files += glob.glob(os.path.join(CWD, 'template_images', '*.jpeg'))
 
 face_model = MLModel('face.mlmodel')
 
